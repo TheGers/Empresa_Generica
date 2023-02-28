@@ -1,0 +1,16 @@
+<?php
+
+require_once "conexion.php";
+class DashboardModelo{
+    static public function mdlDatosDashboard(){
+        $stmt = Conexion::conectar()->prepare('call prc_ObtenerDatosDashboard()');
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    static public function mdlVentasMesActual(){
+        $stmt = Conexion::conectar()->prepare('call prc_ObtenerVentasMesActual()');
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+}
