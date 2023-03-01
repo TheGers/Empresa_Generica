@@ -1,18 +1,22 @@
 <?php 
     headerAdmin($data); 
-   // getModal('modalProductos',$data);
+    getModal('modalProductos',$data);
 ?>
     <main class="app-content">
       <div class="app-title">
 
          <!-- Validacion de acceso -->
-      <!-- <div>
-            <h1><i class="fas fa-box"></i> <?= $data['page_title'] ?>
-              <?php if($_SESSION['permisosMod']['w']){ ?>
+       <div>
+            <!-- <h1><i class="fas fa-box"></i> <?= $data['page_title'] ?> -->
+              
                 <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fas fa-plus-circle"></i> Nuevo</button>
-              <?php } ?> 
-            </h1>
-        </div> -->
+              
+            <!-- </h1> -->
+        </div> 
+
+       
+        
+        <!-- Views/Template/Modals/{$nameModal}.php" -->
 
 
         <ul class="app-breadcrumb breadcrumb">
