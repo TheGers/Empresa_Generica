@@ -12,8 +12,8 @@
 		public function home()
 		{
 			$pageContent = 1;
-			$data['page_tag'] = NOMBRE_EMPESA;
-			$data['page_title'] = NOMBRE_EMPESA;
+			$data['page_tag'] = "NOMBRE_EMPESA";
+			$data['page_title'] = "NOMBRE_EMPESA";
 			$data['page_name'] = "Empresa_Generica";
 			//$data['page'] = $pageContent;
 			//$data['slider'] = $this->getCategoriasT(CAT_SLIDER);
