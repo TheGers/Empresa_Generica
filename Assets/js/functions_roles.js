@@ -73,3 +73,23 @@ $('#tableRoles').DataTable();
 function openModal(){
     $('#modalFormRol').modal('show');
 }
+
+window.addEventListener('load', function() {
+    fntEditRol();
+}, false);
+
+function fntEditRol(COD_ROLES){
+    var btnEditRol = document.querySelectorAll(".btnEditRol");
+    btnEditRol.forEach(function(btnEditRol) {
+        btnEditRol.addEventListener('click', function(){
+
+            document.querySelector('#titleModal').innerHTML ="Actualizar Rol";
+            document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
+            document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
+            document.querySelector('#btnText').innerHTML ="Actualizar";
+
+            $('#modalFormRol').modal('show');
+        
+        });
+    });
+}
