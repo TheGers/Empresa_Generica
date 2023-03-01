@@ -39,10 +39,6 @@
                           <th>precio</th>
                           <th>existencia</th>
                           <th>categoria</th>
-                          <th>CREADO_POR</th>
-                          <th>FECHA_CREACION</th>
-                          <th>MODIFICADO_POR</th>
-                          <th>FECHA_MODIFICACION</th>
                           <th>estado</th>
                         </tr>
                       </thead>
