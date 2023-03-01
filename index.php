@@ -21,10 +21,12 @@
 		{
 			for ($i=2; $i < count($arrUrl); $i++) {
 				$params .=  $arrUrl[$i].',';
-				# code...
+				
 			}
 			$params = trim($params,',');
 		}
 	}
+
+	
 	require_once("Libraries/Core/Autoload.php");
 	require_once("Libraries/Core/Load.php");

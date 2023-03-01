@@ -1,5 +1,7 @@
 <?php
 const BASE_URL = "http://localhost/Empresa_Generica";
+const LIBS = "Libraries/";
+const VIEWS = "Views/";
 
 	//Zona horaria
 	//date_default_timezone_set('America/Honduras');

@@ -53,9 +53,7 @@ document.addEventListener('DOMContentLoaded', function(){
                      formRol.reset();
                      swal("Roles de usuario", objData.msg ,"success");
                      tableRoles.api().ajax.reload(function(){
-                     /*fntEditRol();
-                     fntDelROl();
-                     fbtPermisos();*/
+                    
                     });
                  }else{
                      swal("Error", objData.msg , "error");
