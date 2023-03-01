@@ -18,7 +18,7 @@
 			//$data['page'] = $pageContent;
 			//$data['slider'] = $this->getCategoriasT(CAT_SLIDER);
 			//$data['banner'] = $this->getCategoriasT(CAT_BANNER);
-			//$data['productos'] = $this->getProductosT();
+			$data['productos'] = $this->getProductosT();
 			$this->views->getView($this,"home",$data); 
 		}
 
