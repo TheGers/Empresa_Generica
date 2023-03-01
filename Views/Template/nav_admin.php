@@ -24,7 +24,7 @@
       </li>
         <li><a class="app-menu__item" href="<?= base_url(); ?>/ventas"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">Ventas</span></a></li>
         <li><a class="app-menu__item" href="<?= base_url(); ?>/compras"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">Compras</span></a></li>
-        <li><a class="app-menu__item" href="<?= base_url(); ?>/inventario"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">Inventario</span></a></li>
+        <li><a class="app-menu__item" href="<?= base_url(); ?>/productos"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">Productos</span></a></li>
 
         <li>
             <a class="app-menu__item" href="<?= base_url(); ?>/logout">
