@@ -1,5 +1,5 @@
 <?php 
-    headerTienda($data);
+    headerAdmin($data);
 ?>
 <script>
   document.querySelector('header').classList.add('header-v4');
@@ -12,5 +12,5 @@
       </div>
     </main>
 </div>
-<?php footerTienda($data); ?>
+<?php footerAdmin($data); ?>
 
