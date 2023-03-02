@@ -28,6 +28,7 @@ getModal('modalProductos', $data);
                           <th>Existencia</th>
                           <th>Categoria</th>
                           <th>Estado</th>
+                          <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>

@@ -22,7 +22,7 @@
 							p.existencia,
 							p.categoria,
 							p.estado
-					FROM tbl_producto p WHERE p.estado != 0 ";
+					FROM tbl_producto p WHERE p.cod_producto ";
 					$request = $this->select_all($sql);
 			return $request;
 		}
