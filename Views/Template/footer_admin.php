@@ -16,6 +16,10 @@
     <script type="text/javascript" src="<?= media(); ?>/js/plugins/dataTables.bootstrap.min.js"></script>
 
     <script src="<?= media(); ?>/js/functions_roles.js"></script>
+
+    <!-- manda a llamar a las funciones de los botones agg -->
+    <script type="text/javascript" src="<?= media();?>/js/functions_admin.js"></script>
+    <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
   
   </body>
 </html>
