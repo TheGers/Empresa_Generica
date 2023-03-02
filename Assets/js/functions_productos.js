@@ -4,7 +4,7 @@ let rowTable = ""; */
 
 function openModal()
 {
-    rowTable = "";
+    /*rowTable = "";
     document.querySelector('#idProducto').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
@@ -13,7 +13,7 @@ function openModal()
     document.querySelector("#formProductos").reset();
     document.querySelector("#divBarCode").classList.add("notblock");
     //document.querySelector("#containerGallery").classList.add("notblock");
-   // document.querySelector("#containerImages").innerHTML = "";
+   // document.querySelector("#containerImages").innerHTML = "";*/
     $('#modalFormProductos').modal('show');
 
 }

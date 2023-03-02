@@ -9,7 +9,7 @@
        <div>
              <h1><i class="fa fa-folder-open-o"></i> <?= $data['page_title'] ?>
               
-                <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fa fa-plus"></i> Nuevo</button>
+                <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fas fa-plus-circle"></i> Nuevo</button>
               
             </h1>
         </div> 
