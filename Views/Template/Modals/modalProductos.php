@@ -52,7 +52,7 @@
                     </div>
 
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="form-group col-md-6">
                             <label class="control-label">CREADO_POR <span class="required">*</span></label>
                             <input class="form-control" id="txtCREADO_POR" name="txtCREADO_POR" type="text" required="">
@@ -68,7 +68,7 @@
                         <div class="form-group col-md-6">
                             <label class="control-label">FECHA_MODIFICACION <span class="required">*</span></label>
                             <input class="form-control" id="txtFECHA_MODIFICACION" name="txtFECHA_MODIFICACION" type="text" required="">
-                        </div>
+                        </div> -->
 
 
 
@@ -124,6 +124,7 @@
 </div>
 
 <!-- Modal -->
+<!-- 
 <div class="modal fade" id="modalViewProducto" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-xl" >
     <div class="modal-content">
@@ -179,3 +180,4 @@
   </div>
 </div>
 
+ -->
