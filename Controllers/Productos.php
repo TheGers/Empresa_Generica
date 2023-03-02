@@ -32,15 +32,14 @@
 					}else{
 						$arrData[$i]['estado'] = '<span class="badge badge-danger">Inactivo</span>';
 					}
-/* 
+					/* 
 						//$arrData[$i]['precio'] = SMONEY.' '.formatMoney($arrData[$i]['precio']);
 						$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo('.$arrData[$i]['cod_producto'].')" title="Ver producto"><i class="far fa-eye"></i></button>';
 						$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEditInfo(this,'.$arrData[$i]['cod_producto'].')" title="Editar producto"><i class="fas fa-pencil-alt"></i></button>';
 						$btnDelete = '<button class="btn btn-danger btn-sm" onClick="fntDelInfo('.$arrData[$i]['cod_producto'].')" title="Eliminar producto"><i class="far fa-trash-alt"></i></button>';
 					
 					$arrData[$i]['options'] = '<div class="text-center">'.$btnView.' '.$btnEdit.' '.$btnDelete.'</div>';
-
- */
+					*/
 
 					$arrData[$i]['ACCIONES'] = '<div class="text-center">
 					<button class="btn btn-secondary btn-sm btnViewProducto" pr="'.$arrData[$i]['cod_producto'].'" title="Ver producto"><i class="far fa-eye"></i></button>

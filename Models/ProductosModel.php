@@ -16,16 +16,18 @@
 		}
 
         public function selectProductos(){
-			$sql = "SELECT  p.cod_producto,
-							p.producto,
-							p.precio,
-							p.existencia,
-							p.categoria,
-							p.estado
-					FROM tbl_producto p WHERE p.cod_producto ";
+			$sql = "SELECT  cod_producto,
+							producto,
+							precio,
+							existencia,
+							categoria,
+							estado
+					FROM tbl_producto WHERE cod_producto ";
 					$request = $this->select_all($sql);
 			return $request;
 		}
+
+        
 
 
 	
