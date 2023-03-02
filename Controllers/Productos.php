@@ -16,7 +16,43 @@
 			$this->views->getView($this,"productos",$data); 
 		}
 
-        
+        public function getProductos()
+		{
+			//if($_SESSION['permisosMod']['r']){
+				$arrData = $this->model->selectProductos();
+
+				for ($i=0; $i < count($arrData); $i++) {
+					$btnView = '';
+					$btnEdit = '';
+					$btnDelete = '';
+
+					if($arrData[$i]['estado'] == 1)
+					{
+						$arrData[$i]['estado'] = '<span class="badge badge-success">Activo</span>';
+					}else{
+						$arrData[$i]['estado'] = '<span class="badge badge-danger">Inactivo</span>';
+					}
+
+						//$arrData[$i]['precio'] = SMONEY.' '.formatMoney($arrData[$i]['precio']);
+						$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo('.$arrData[$i]['cod_producto'].')" title="Ver producto"><i class="far fa-eye"></i></button>';
+						$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEditInfo(this,'.$arrData[$i]['cod_producto'].')" title="Editar producto"><i class="fas fa-pencil-alt"></i></button>';
+						$btnDelete = '<button class="btn btn-danger btn-sm" onClick="fntDelInfo('.$arrData[$i]['cod_producto'].')" title="Eliminar producto"><i class="far fa-trash-alt"></i></button>';
+					
+					$arrData[$i]['options'] = '<div class="text-center">'.$btnView.' '.$btnEdit.' '.$btnDelete.'</div>';
+
+
+
+					/* $arrData[$i]['ACCIONES'] = '<div class="text-center">
+					<button class="btn btn-secondary btn-sm btnPermisosRol" rl="'.$arrData[$i]['COD_ROLES'].'" title="Permisos"><i class="fas fa-key"></i></button>
+					<button class="btn btn-primary btn-sm btnEditRol" rl="'.$arrData[$i]['COD_ROLES'].'" title="Editar"><i class="fas fa-pencil-alt"></i></button>
+					<button class="btn btn-danger btn-sm btnDelRol" rl="'.$arrData[$i]['COD_ROLES'].'" title="Eliminar"><i class="far fa-trash-alt"></i></button>
+					</div>'; */
+
+				}
+				echo json_encode($arrData,JSON_UNESCAPED_UNICODE);
+			//}
+			die();
+		}
 
 
 

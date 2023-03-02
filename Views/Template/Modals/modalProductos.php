@@ -1,13 +1,15 @@
 <!-- Modal -->
 <div class="modal fade" id="modalFormProductos" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog">
     <div class="modal-content">
+
       <div class="modal-header headerRegister">
         <h5 class="modal-title" id="titleModal">Nueva Producto</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <div class="modal-body">
 
 
@@ -18,15 +20,15 @@
           <div class="row">
 
             <!-- Nombre del producto y la categoría -->
-            <div class="col-md-5">
+            <div class="col-md-12">
               
               <div class="form-group">
                 <label class="control-label">Nombre Producto <span class="required">*</span></label>
                 <input class="form-control" id="txtproducto" name="txtproducto" type="text" required="">
               </div>
               <div class="form-group">
-                <label class="control-label">Categoría</label>
-                <textarea class="form-control" id="txtproducto" name="txtproducto"></textarea>
+                <label class="control-label">Categoría <span class="required">*</span></label>
+                <textarea class="form-control" id="txtcategoria" name="txtcategoria" type="text" required=""></textarea>
               </div>
 
 
@@ -47,8 +49,8 @@
                 <div class="form-group col-md-6">
                   <label for="listStatus">Estado <span class="required">*</span></label>
                   <select class="form-control selectpicker" id="listStatus" name="listStatus" required="">
-                    <option value="0">Activo</option>
-                    <option value="1">Inactivo</option>
+                    <option value="1">Activo</option>
+                    <option value="2">Inactivo</option>
                   </select>
                 </div>
               </div>
@@ -77,3 +79,52 @@
     </div>
   </div>
 </div>
+
+
+
+
+<!-- Modal -->
+<!-- 
+<div class="modal fade" id="modalViewProducto" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl" >
+    <div class="modal-content">
+      <div class="modal-header header-primary">
+        <h5 class="modal-title" id="titleModal">Datos del Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td>Codigo:</td>
+              <td id="celCodigo"></td>
+            </tr>
+            <tr>
+              <td>Nombre:</td>
+              <td id="celNombre"></td>
+            </tr>
+            <tr>
+              <td>Precio:</td>
+              <td id="celPrecio"></td>
+            </tr>
+            <tr>
+              <td>Categoría:</td>
+              <td id="celCategoria"></td>
+            </tr>
+            <tr>
+              <td>Estado:</td>
+              <td id="celStatus"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ -->
