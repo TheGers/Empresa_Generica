@@ -1,10 +1,10 @@
 <!-- Modal -->
 <div class="modal fade" id="modalFormProductos" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog ">
+  <div class="modal-dialog modal-sm">
     <div class="modal-content">
 
       <div class="modal-header headerRegister">
-        <h5 class="modal-title" id="titleModal">Nueva Producto</h5>
+        <h5 class="modal-title" id="titleModal">Nuevo Producto</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -21,14 +21,20 @@
 
             <!-- Nombre del producto y la categoría -->
             <div class="col-md-12">
-              
+              <!-- <div class="row">
+                <div class="form-group col-md-6">
+                  <label class="control-label">Código <span class="required">*</span></label>
+                  <input class="form-control" id="txtCodigoProducto" name="txtCodigoProducto" type="text" required="">
+                </div>
+              </div> -->
+
               <div class="form-group">
                 <label class="control-label">Nombre Producto <span class="required">*</span></label>
-                <input class="form-control" id="txtproducto" name="txtproducto" type="text" required="">
+                <input class="form-control" id="txtproducto" name="txtproducto" type="text" >
               </div>
               <div class="form-group">
                 <label class="control-label">Categoría <span class="required">*</span></label>
-                <textarea class="form-control" id="txtcategoria" name="txtcategoria" type="text" required=""></textarea>
+                <textarea class="form-control" id="txtcategoria" name="txtcategoria" type="text" ></textarea>
               </div>
             </div>
 
@@ -38,11 +44,11 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <label class="control-label">Precio <span class="required">*</span></label>
-                  <input class="form-control" id="txtPrecio" name="txtPrecio" type="text" required="">
+                  <input class="form-control" id="txtPrecio" name="txtPrecio" type="text" >
                 </div>
                 <div class="form-group col-md-6">
                   <label class="control-label">existencia <span class="required">*</span></label>
-                  <input class="form-control" id="txtexistencia" name="txtexistencia" type="text" required="">
+                  <input class="form-control" id="txtexistencia" name="txtexistencia" type="text" >
                 </div>
               </div>
 
@@ -50,7 +56,7 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="listStatus">Estado <span class="required">*</span></label>
-                  <select class="form-control selectpicker" id="listStatus" name="listStatus" required="">
+                  <select class="form-control selectpicker" id="listStatus" name="listStatus" >
                     <!-- <option value="0">Seleccionar</option> -->
                     <option value="1">Disponible</option>
                     <option value="2">Agotado</option>
@@ -70,7 +76,7 @@
               </div>
 
             </div>
-            
+
 
             <!-- <div class="col-md-4">
             </div> -->
@@ -78,11 +84,9 @@
           </div>
         </form>
 
-        
+
 
       </div>
     </div>
   </div>
 </div>
-
-

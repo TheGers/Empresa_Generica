@@ -17,7 +17,7 @@ class Productos extends Controllers
 	}
 
 	public function getProductos(){
-		//if($_SESSION['permisosMod']['r']){
+		
 		$arrData = $this->model->selectProductos();
 
 		for ($i = 0; $i < count($arrData); $i++) {
@@ -38,21 +38,64 @@ class Productos extends Controllers
 					
 			$arrData[$i]['options'] = '<div class="text-center">'.$btnView.' '.$btnEdit.' '.$btnDelete.'</div>';
 					
-
-					// $arrData[$i]['options'] = '<div class="text-center">
-					// <button class="btn btn-secondary btn-sm btnViewProducto" pr="' . $arrData[$i]['cod_producto'] . '" title="Ver producto"><i class="far fa-eye"></i></button>
-					// <button class="btn btn-primary btn-sm btnEditProducto" pr="' . $arrData[$i]['cod_producto'] . '" title="Editar producto"><i class="fas fa-pencil-alt"></i></button>
-					// <button class="btn btn-danger btn-sm btnDelProducto" pr="' . $arrData[$i]['cod_producto'] . '" title="Eliminar producto"><i class="far fa-trash-alt"></i></button>
-					// </div>';
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
-		//}
+	
 		die();
 	}
 
 
 	public function setProducto(){
-		dep($_POST);
+		
+		if($_POST){
+		
+
+			if(empty($_POST['txtNombre'])||  empty($_POST['txtPrecio'])|| empty($_POST['txtexistencia']) 
+				||empty($_POST['txtcategoria']) || empty($_POST['listStatus']) )
+			{
+				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
+			}else{
+				
+				$intcod_producto = intval($_POST['idProducto']);
+				$strproducto = strClean($_POST['txtproducto']);
+				$intprecio = intval($_POST['txtPrecio']);
+				$intexistencia = intval($_POST['txtexistencia']);
+				$strcategoria = strClean($_POST['txtcategoria']);
+				$intestado = intval($_POST['listStatus']);
+				//$request_producto = "";
+				if($intcod_producto == 0)
+					{
+						$option = 1;
+						$request_producto = $this->model->insertProducto($strproducto,  
+																		$intprecio, 
+																		$intexistencia,
+																		$strcategoria,
+																		$intestado);
+						
+					}else{
+						$option = 2;
+
+
+
+					}
+
+					if($request_producto>0){
+
+						if($option==1){
+							$arrResponse = array('status' => true, 'cod_producto' => $request_producto, 'msg' => 'Datos guardados correctamente.');
+						}else{
+							//$arrResponse = array('status' => true, 'cod_producto' => $intcod_producto, 'msg' => 'Datos Actualizados correctamente.');
+						}
+
+					}else if($request_producto == 'exist'){
+						$arrResponse = array('status' => false, 'msg' => '¡Atención! ya existe un producto con el Código Ingresado.');		
+					}else{
+						$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+					}	
+			}
+			echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+		}
+		die();
 
 
 
