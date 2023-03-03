@@ -22,7 +22,8 @@ window.addEventListener('load', function() {
             {"data":"precio"},
             {"data":"existencia"},
             {"data":"categoria"},
-            {"data":"estado"}
+            {"data":"estado"},
+            {"data":"options"}
         ],
         'dom': 'lBfrtip',
         'buttons': [
@@ -53,6 +54,14 @@ window.addEventListener('load', function() {
         "iDisplayLength": 10,
         "order":[[0,"asc"]]  
     });
+
+
+    //NUEVO PRODUCTO
+
+
+
+
+
 });
 
 

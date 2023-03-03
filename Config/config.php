@@ -8,7 +8,7 @@ const VIEWS = "Views/";
 
 	//Datos de conexión a Base de Datos
 	const DB_HOST = "localhost";
-	const DB_NAME = "bd1";
+	const DB_NAME = "bd2";
 	const DB_USER = "root";
 	const DB_PASSWORD = "";
 	const DB_CHARSET = "utf8";

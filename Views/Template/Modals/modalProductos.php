@@ -49,8 +49,8 @@
                 <div class="form-group col-md-6">
                   <label for="listStatus">Estado <span class="required">*</span></label>
                   <select class="form-control selectpicker" id="listStatus" name="listStatus" required="">
-                    <option value="1">Activo</option>
-                    <option value="2">Inactivo</option>
+                    <option value="1">Disponible</option>
+                    <option value="2">Agotado</option>
                   </select>
                 </div>
               </div>

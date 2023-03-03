@@ -22,7 +22,7 @@
 							existencia,
 							categoria,
 							estado
-					FROM tbl_producto WHERE cod_producto ";
+					FROM tbl_producto WHERE estado!=0 ";
 					$request = $this->select_all($sql);
 			return $request;
 		}
