@@ -26,7 +26,7 @@ class Productos extends Controllers
 			$btnDelete = '';
 
 			if ($arrData[$i]['estado'] == 1) {
-				$arrData[$i]['estado'] = '<span class="badge badge-success">Dsiponible</span>';
+				$arrData[$i]['estado'] = '<span class="badge badge-success">Disponible</span>';
 			} else {
 				$arrData[$i]['estado'] = '<span class="badge badge-danger">Agotado</span>';
 			}
