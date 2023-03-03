@@ -16,8 +16,7 @@ class Productos extends Controllers
 		$this->views->getView($this, "productos", $data);
 	}
 
-	public function getProductos()
-	{
+	public function getProductos(){
 		//if($_SESSION['permisosMod']['r']){
 		$arrData = $this->model->selectProductos();
 
@@ -32,12 +31,12 @@ class Productos extends Controllers
 				$arrData[$i]['estado'] = '<span class="badge badge-danger">Agotado</span>';
 			}
 			
-						$arrData[$i]['precio'] = SMONEY.' '.formatMoney($arrData[$i]['precio']);
-						$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo('.$arrData[$i]['cod_producto'].')" title="Ver producto"><i class="far fa-eye"></i></button>';
-						$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEditInfo(this,'.$arrData[$i]['cod_producto'].')" title="Editar producto"><i class="fas fa-pencil-alt"></i></button>';
-						$btnDelete = '<button class="btn btn-danger btn-sm" onClick="fntDelInfo('.$arrData[$i]['cod_producto'].')" title="Eliminar producto"><i class="far fa-trash-alt"></i></button>';
+			$arrData[$i]['precio'] = SMONEY.' '.formatMoney($arrData[$i]['precio']);
+			$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo('.$arrData[$i]['cod_producto'].')" title="Ver producto"><i class="far fa-eye"></i></button>';
+			$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEditInfo(this,'.$arrData[$i]['cod_producto'].')" title="Editar producto"><i class="fas fa-pencil-alt"></i></button>';
+			$btnDelete = '<button class="btn btn-danger btn-sm" onClick="fntDelInfo('.$arrData[$i]['cod_producto'].')" title="Eliminar producto"><i class="far fa-trash-alt"></i></button>';
 					
-						$arrData[$i]['options'] = '<div class="text-center">'.$btnView.' '.$btnEdit.' '.$btnDelete.'</div>';
+			$arrData[$i]['options'] = '<div class="text-center">'.$btnView.' '.$btnEdit.' '.$btnDelete.'</div>';
 					
 
 					// $arrData[$i]['options'] = '<div class="text-center">
@@ -50,5 +49,18 @@ class Productos extends Controllers
 		//}
 		die();
 	}
+
+
+	public function setProducto(){
+		dep($_POST);
+
+
+
+	}
+
+	
+
+
+
 }
 ?>

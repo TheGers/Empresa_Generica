@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="modalFormProductos" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog ">
     <div class="modal-content">
 
       <div class="modal-header headerRegister">
@@ -30,8 +30,10 @@
                 <label class="control-label">Categoría <span class="required">*</span></label>
                 <textarea class="form-control" id="txtcategoria" name="txtcategoria" type="text" required=""></textarea>
               </div>
+            </div>
 
 
+            <div class="col-md-12">
               <!-- Precio y cantidad existente -->
               <div class="row">
                 <div class="form-group col-md-6">
@@ -49,6 +51,7 @@
                 <div class="form-group col-md-6">
                   <label for="listStatus">Estado <span class="required">*</span></label>
                   <select class="form-control selectpicker" id="listStatus" name="listStatus" required="">
+                    <!-- <option value="0">Seleccionar</option> -->
                     <option value="1">Disponible</option>
                     <option value="2">Agotado</option>
                   </select>
@@ -67,6 +70,7 @@
               </div>
 
             </div>
+            
 
             <!-- <div class="col-md-4">
             </div> -->
@@ -74,6 +78,7 @@
           </div>
         </form>
 
+        
 
       </div>
     </div>
@@ -81,50 +86,3 @@
 </div>
 
 
-
-
-<!-- Modal -->
-<!-- 
-<div class="modal fade" id="modalViewProducto" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-xl" >
-    <div class="modal-content">
-      <div class="modal-header header-primary">
-        <h5 class="modal-title" id="titleModal">Datos del Producto</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <table class="table table-bordered">
-          <tbody>
-            <tr>
-              <td>Codigo:</td>
-              <td id="celCodigo"></td>
-            </tr>
-            <tr>
-              <td>Nombre:</td>
-              <td id="celNombre"></td>
-            </tr>
-            <tr>
-              <td>Precio:</td>
-              <td id="celPrecio"></td>
-            </tr>
-            <tr>
-              <td>Categoría:</td>
-              <td id="celCategoria"></td>
-            </tr>
-            <tr>
-              <td>Estado:</td>
-              <td id="celStatus"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
- -->
