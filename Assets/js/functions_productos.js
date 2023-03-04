@@ -1,8 +1,18 @@
 //Sirve para el código de barra
-//document.write(`<script src="${base_url}/Assets/js/plugins/JsBarcode.all.min.js"></script>`);
+document.write(`<script src="${base_url}/Assets/js/plugins/JsBarcode.all.min.js"></script>`);
 let tableProductos;
 
-//$('#tableProductos').DataTable();
+$(document).on('focusin', function(e) {
+    if ($(e.target).closest(".tox-dialog").length) {
+        e.stopImmediatePropagation();
+    }
+});
+
+
+
+
+
+
 
 window.addEventListener('load', function() {
 
@@ -25,28 +35,47 @@ window.addEventListener('load', function() {
             {"data":"estado"},
             {"data":"options"}
         ],
+        "columnDefs": [
+            { 'className': "textright", "targets": [ 2 ] },
+            { 'className': "textright", "targets": [ 3 ] },
+            { 'className': "textcenter", "targets": [ 5 ] },
+            { 'className': "textcenter", "targets": [ 6 ] }
+          ], 
         'dom': 'lBfrtip',
         'buttons': [
             {
                 "extend": "copyHtml5",
                 "text": "<i class='far fa-copy'></i> Copiar",
                 "titleAttr":"Copiar",
-                "className": "btn btn-secondary"
+                "className": "btn btn-secondary",
+                "exportOptions": { 
+                    "columns": [ 0, 1, 2, 3, 4, 5] 
+                }
+    
             },{
                 "extend": "excelHtml5",
                 "text": "<i class='fas fa-file-excel'></i> Excel",
                 "titleAttr":"Esportar a Excel",
-                "className": "btn btn-success"
+                "className": "btn btn-success",
+                "exportOptions": { 
+                    "columns": [ 0, 1, 2, 3, 4, 5] 
+                }
             },{
                 "extend": "pdfHtml5",
                 "text": "<i class='fas fa-file-pdf'></i> PDF",
                 "titleAttr":"Esportar a PDF",
-                "className": "btn btn-danger"
+                "className": "btn btn-danger",
+                "exportOptions": { 
+                    "columns": [ 0, 1, 2, 3, 4, 5] 
+                }
             },{
                 "extend": "csvHtml5",
                 "text": "<i class='fas fa-file-csv'></i> CSV",
                 "titleAttr":"Esportar a CSV",
-                "className": "btn btn-info"
+                "className": "btn btn-info",
+                "exportOptions": { 
+                    "columns": [ 0, 1, 2, 3, 4, 5] 
+                }
             }
         ],
         "resonsieve":"true",
@@ -56,24 +85,71 @@ window.addEventListener('load', function() {
     });
 
 
-    //NUEVO PRODUCTO
+    if(document.querySelector("#formProductos")){
+        let formProductos=document.querySelector("#formProductos");
+        formProductos.onsubumit=function(e){
+            e.preventDefault
+            //let intcod_producto=document.querySelector('#txtCodigoProducto').value;
+            let strproducto = document.querySelector('#txtproducto').value;
+            let intprecio = document.querySelector('#txtPrecio').value;
+            let intexistencia = document.querySelector('#txtexistencia').value;
+            let strcategoria = document.querySelector('#txtcategoria').value;
+            let intestado = document.querySelector('#listStatus').value;
+            if (strproducto == '' || intprecio == '' || intexistencia == ''||strcategoria == ''||  intestado == '' ) {
+                swal("Atención", "Todos los campos son obligatorios.", "error");
+                return false;
+            }
+            divLoading.style.display="flex";
+            tinyMCE.triggerSave();
+            let request = (window.XMLHttpRequest) ? 
+                        new XMLHttpRequest() : 
+                        new ActiveXObject('Microsoft.XMLHTTP');
+            let ajaxUrl = base_url+'/Productos/setProducto'; 
+            let formData = new FormData(formProductos);
+            request.open("POST",ajaxUrl,true);
+            request.send(formData);
+            request.onreadystatechange=function(){
+                if(request.readyState==4 && request.status==200){
+                    console.log(request.responseText);
+                }
+                divLoading.style.display="none";
+            }
 
 
 
+        }
+
+    }
 
 
-});
+   
+    
+
+
+
+},false);
+
+
+
+ //NUEVO PRODUCTO
+
+
+
+    
+
+
+
 
 
 function openModal()
 {
     rowTable = "";
-   // document.querySelector('#idProducto').value ="";
-    //document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
-    //document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
-    //document.querySelector('#btnText').innerHTML ="Guardar";
-    //document.querySelector('#titleModal').innerHTML = "Nuevo Producto";
-    //document.querySelector("#formProductos").reset();
+    document.querySelector('#idProducto').value ="";
+    document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
+    document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
+    document.querySelector('#btnText').innerHTML ="Guardar";
+    document.querySelector('#titleModal').innerHTML = "Nuevo Producto";
+    document.querySelector("#formProductos").reset();
     $('#modalFormProductos').modal('show');
 
 }
