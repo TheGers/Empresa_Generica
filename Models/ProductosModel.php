@@ -15,6 +15,7 @@
 			parent::__construct();
 		}
 
+		////SELECT QUE MANDA A TRAER LOS DATOS A LA BD
         public function selectProductos(){
 			$sql = "SELECT  cod_producto,
 							producto,
@@ -28,7 +29,9 @@
 		}
 
 
+		//INSERT NO FUNCIONA
 		public function insertProducto(string $cod_producto, string $producto, int $precio, int $existencia, string $categoria, int $estado ){
+			
 			$this->intcod_producto=$cod_producto;
 			$this->strproducto=$producto;
 			$this->intprecio=$precio;
@@ -36,12 +39,13 @@
 			$this->strcategoria=$categoria;
 			$this->intestado=$estado;
 			$return=0;
-			$sql="SELECT * FROM tbl_producto WHERE cod_producto=$this->intcod_producto";
+			$sql="SELECT * FROM tbl_producto WHERE cod_producto='{$this->intcod_producto}'";
 			$request=$this->select_all($sql);
 			if(empty($request)){
-				$query_insert="INSERT INTO tbl_producto(producto, precio, existencia, categoria, estado)
-								VALUES( ?, ?, ?, ?, ?)";
-				$arrData=array($this->strproducto,
+				$query_insert="INSERT INTO tbl_producto(cod_producto, producto, precio, existencia, categoria, estado)
+								VALUES(?, ?, ?, ?, ?, ?)";
+				$arrData=array($this->intcod_producto,
+								$this->strproducto,
 								$this->intprecio,
 								$this->intexistencia,
 								$this->strcategoria,
@@ -63,6 +67,23 @@
 
 		}
 
+
+		//PARA LLAMAR UNO 
+		public function selectProducto(int $cod_producto){
+			$this->intcod_producto = $cod_producto;
+			/* echo $cod_producto;
+			exit; */
+			$sql = "SELECT cod_producto,
+							producto,
+							precio,
+							existencia,
+							categoria,
+							estado
+					FROM tbl_producto WHERE cod_producto = $this->intcod_producto";
+			$request = $this->select($sql);
+			return $request;
+
+		}
         
 	
 	}

@@ -90,3 +90,61 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal PARA MOSTRAR UN DATO -->
+<div class="modal fade" id="modalViewProducto" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+
+      <div class="modal-header header-primary">
+        <h5 class="modal-title" id="titleModal">Datos del Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <table class="table table-bordered">
+          <tbody>
+
+            <tr>
+              <td>ID:</td>
+              <td id="celId"></td>
+            </tr>
+
+            <tr>
+              <td>Producto:</td>
+              <td id="celProducto"></td>
+            </tr>
+
+            <tr>
+              <td>Categoria:</td>
+              <td id="celCategoria"></td>
+            </tr>
+
+            <tr>
+              <td>Precio:</td>
+              <td id="celPrecio"></td>
+            </tr>
+
+            <tr>
+              <td>Existencia:</td>
+              <td id="celExistncia"></td>
+            </tr>
+
+            <tr>
+              <td>Estado:</td>
+              <td id="celStatus"></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div>
+  </div>
+</div>

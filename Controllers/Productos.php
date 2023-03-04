@@ -31,12 +31,15 @@ class Productos extends Controllers
 				$arrData[$i]['estado'] = '<span class="badge badge-danger">Agotado</span>';
 			}
 			
-			$arrData[$i]['precio'] = SMONEY.' '.formatMoney($arrData[$i]['precio']);
+		 $arrData[$i]['precio'] = SMONEY.' '.formatMoney($arrData[$i]['precio']);
 			$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo('.$arrData[$i]['cod_producto'].')" title="Ver producto"><i class="far fa-eye"></i></button>';
 			$btnEdit = '<button class="btn btn-primary  btn-sm" onClick="fntEditInfo(this,'.$arrData[$i]['cod_producto'].')" title="Editar producto"><i class="fas fa-pencil-alt"></i></button>';
 			$btnDelete = '<button class="btn btn-danger btn-sm" onClick="fntDelInfo('.$arrData[$i]['cod_producto'].')" title="Eliminar producto"><i class="far fa-trash-alt"></i></button>';
 					
 			$arrData[$i]['options'] = '<div class="text-center">'.$btnView.' '.$btnEdit.' '.$btnDelete.'</div>';
+ 
+
+		
 					
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
@@ -44,12 +47,12 @@ class Productos extends Controllers
 		die();
 	}
 
-
+//AGREGAR NUEVO
 	public function setProducto(){
 		
 		if($_POST){
-		
-
+			/* dep($_POST);
+			die(); */
 			if(empty($_POST['txtNombre'])||  empty($_POST['txtPrecio'])|| empty($_POST['txtexistencia']) 
 				||empty($_POST['txtcategoria']) || empty($_POST['listStatus']) )
 			{
@@ -66,7 +69,8 @@ class Productos extends Controllers
 				if($intcod_producto == 0)
 					{
 						$option = 1;
-						$request_producto = $this->model->insertProducto($strproducto,  
+						$request_producto = $this->model->insertProducto($intcod_producto,
+																		$strproducto,  
 																		$intprecio, 
 																		$intexistencia,
 																		$strcategoria,
@@ -101,6 +105,25 @@ class Productos extends Controllers
 
 	}
 
+
+	//LLAMAR SOLO UNO
+	public function getProducto( $cod_producto){
+		
+			$cod_producto = intval($cod_producto);
+			if($cod_producto > 0){
+				$arrData = $this->model->selectProducto($cod_producto);
+				 /* dep($arrData);
+				 die();  */
+				if(empty($arrData)){
+					$arrResponse = array('estado' => false, 'msg' => 'Datos no encontrados.');
+				}else{
+					$arrResponse = array('estado' => true, 'data' => $arrData);
+				}
+				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+			}
+		
+		die();
+	}
 	
 
 
