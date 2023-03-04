@@ -1,13 +1,12 @@
 <?php 
 headerAdmin($data);
-//getModal('modalProductos', $data);
+
 ?>
    <main class="app-content">
       <div class="app-title">
-        <div>
-          <h1><i class="fas fa-box"></i> <?= $data['page_title'] ?> 
-          <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button> </h1>
-        </div>
+      <div>
+          <h1><i class="icon fa fa-area-chart"></i> <?= $data['page_title'] ?> 
+      </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
           <li class="breadcrumb-item"><a href="<?= base_url(); ?>/reporteventas"><?= $data['page_title'] ?></a></li>
@@ -23,12 +22,11 @@ headerAdmin($data);
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Producto</th>
-                          <th>Precio</th>
-                          <th>Existencia</th>
-                          <th>Categoria</th>
-                          <th>Estado</th>
-                          <th>Acciones</th>
+                          <th>ID Venta</th>
+                          <th>ID Producto</th>
+                          <th>Subtotal</th>
+                          <th>Impuesto</th>
+                          <th>Total</th>
                         </tr>
                       </thead>
                       <tbody>
